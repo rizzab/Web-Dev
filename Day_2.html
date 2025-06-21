@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Bird Watching website</title>
+        <style>
+             body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #00ff00; /* Bright green background */
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+    h1{
+        text-align: center;
+        font-size: 50px;
+        font-style: inherit;
+
+    }
+
+    .main {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .main h2 {
+      font-family: "Georgia", serif;
+      font-size: 36px;
+      color:black;
+    }
+
+    .main p {
+      font-size: 16px;
+      color: black;
+      line-height: 1.6;
+    }
+
+    .sidebar {
+      flex: 1;
+      padding: 20px;
+      background-color: limegreen;
+    }
+
+    .sidebar h2 {
+      font-family: "Georgia", serif;
+      font-size: 24px;
+      color: darkgreen;
+      text-align: center;
+    }
+ 
+         .photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+        .photos img {
+      width: 100%;
+      height: auto;
+      border: 2px solid #000;
+    }
+        </style>
+</head>
+<body>
+    <h1>BIRD WATCHING</h1>
+     <div class="container">
+    <div class="main">
+      <h2>WELCOME</h2>
+      <p>
+        Welcome to our fake birdwatching site. If this were a real site, it would be the ideal place to come to learn more about birdwatching, whether you are a beginner looking to learn how to get into birding, or an expert wanting to share ideas, tips, and photos with other like-minded people.
+      </p>
+      <p>
+        So don't waste time! Get what you need, then turn off that computer and get out into the great outdoors!
+      </p>
+    </div>
+    <div class="sidebar">
+        <h2>FAVOURITE PHOTOS</h2>
+        <div class="images">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Cardinalis_cardinalis_male.jpg/220px-Cardinalis_cardinalis_male.jpg" alt="Bird 1">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Peacock_Plumage.jpg/220px-Peacock_Plumage.jpg" alt="Bird 2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Ibis_White.jpg/220px-Ibis_White.jpg" alt="Bird 3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Swan.jpg/220px-Swan.jpg" alt="Bird 4">
+        </div>
+    </div>    
+</body>
+</html>
