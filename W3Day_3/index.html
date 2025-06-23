@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>To-Do List App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .todo-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-section {
+      display: flex;
+      gap: 10px;
+    }
+
+    #task-input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #task-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    #task-list li {
+      background: #f9f9f9;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #task-list li.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+
+    .task-actions button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="todo-container">
+    <h1>My To-Do List</h1>
+    <div class="input-section">
+      <input type="text" id="task-input" placeholder="Add a new task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="task-list"></ul>
+  </div>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById("task-input");
+      const taskText = taskInput.value.trim();
+
+      if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+      }
+
+      const li = document.createElement("li");
+
+      li.innerHTML = `
+        <span onclick="toggleComplete(this)">${taskText}</span>
+        <div class="task-actions">
+          <button onclick="deleteTask(this)">🗑</button>
+        </div>
+      `;
+
+      document.getElementById("task-list").appendChild(li);
+      taskInput.value = "";
+    }
+
+    function toggleComplete(spanElement) {
+      spanElement.parentElement.classList.toggle("completed");
+    }
+
+    function deleteTask(buttonElement) {
+      const li = buttonElement.closest("li");
+      li.remove();
+    }
+  </script>
+</body>
+</html>
